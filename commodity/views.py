@@ -15,5 +15,9 @@ def commodities(request):
 def commodity(request, id):
     if request.method == 'GET':
         item = get_object_or_404(Commodity, pk=id)
-        return render(request, 'commodity/commodity.html', {'item': item})
+        return render(request, 'commodity/commodity.html', {'item': item, 'id': id})
     
+
+def place_order(request)    
+
+    if request.method == "POST":

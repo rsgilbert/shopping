@@ -10,3 +10,5 @@ class Commodity(models.Model):
     price = models.IntegerField()
     description = models.CharField(max_length=1000, blank=True)
     in_stock = models.IntegerField(blank=True)
+
+
