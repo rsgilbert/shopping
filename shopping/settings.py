@@ -27,8 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'i(w8&5cca-2b%$)=1q*3lja!_0#d)j
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = [
-    '<domain name>',
-    '<Ip address>',
+    'wanai.herokuapp.com',
 ]
 
 
