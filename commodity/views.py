@@ -18,6 +18,3 @@ def commodity(request, id):
         return render(request, 'commodity/commodity.html', {'item': item, 'id': id})
     
 
-def place_order(request)    
-
-    if request.method == "POST":
