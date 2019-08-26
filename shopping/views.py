@@ -2,4 +2,4 @@ from django.shortcuts import redirect
 
 
 def index(request):
-    return redirect('dashboard:dashbaord')
+    return redirect('commodity:commodities')

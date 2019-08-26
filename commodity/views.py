@@ -7,13 +7,13 @@ from .models import Commodity
 def commodities(request):
     if request.method == 'GET':
         items = Commodity.objects.all()
-        return render(request, 'commodity/commodities.html', 'items': item)
+        return render(request, 'commodity/commodities.html', {'items': items})
 
-        
+
 
 
 def commodity(request, id):
     if request.method == 'GET':
         item = get_object_or_404(Commodity, pk=id)
-        return render(request, 'commodity/commodity.html', 'item': item)
+        return render(request, 'commodity/commodity.html', {'item': item})
     
