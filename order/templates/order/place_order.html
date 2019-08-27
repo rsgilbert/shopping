@@ -12,10 +12,8 @@
   <form method="POST" action="{% url 'order:place_order' id %}">
     {% csrf_token %}
     {% for formitem in form %}
-      {% if formitem is not form.commodity %}
         {{ formitem.label }}
         {{ formitem }}
-      {% endif %}
     {% endfor %}
     <input type=submit value="PLACE ORDER">
   </form>

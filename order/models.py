@@ -5,8 +5,8 @@ from commodity.models import Commodity
 
 
 class Order(models.Model):
-    name = models.CharField(max_length=100)
-    contact = models.CharField(max_length=100)
+    fullname = models.CharField(max_length=100)
+    telephone = models.CharField(max_length=100)
     commodity = models.ForeignKey(to=Commodity, on_delete=models.CASCADE)
     hall = models.CharField(max_length=100)
     room_number = models.CharField(max_length=10)
