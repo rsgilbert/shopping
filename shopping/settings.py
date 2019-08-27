@@ -121,7 +121,8 @@ DATABASES['default'].update(db_from_env)
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "media"
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -132,7 +133,5 @@ AZURE_ACCOUNT_NAME = "wanaishoppingsite"
 AZURE_CUSTOM_DOMAIN = '{}.blob.core.windows.net'.format(AZURE_ACCOUNT_NAME)
 MEDIA_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, MEDIA_LOCATION)
 DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
-STATIC_LOCATION = "static"
-MEDIA_LOCATION = "media"
 STATIC_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, STATIC_LOCATION)
 STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
