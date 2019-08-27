@@ -6,5 +6,4 @@ app_name = 'commodity'
 
 urlpatterns = [
     path('', views.commodities, name='commodities'),
-    path('<int:id>', views.commodity, name="commodity"),
 ]

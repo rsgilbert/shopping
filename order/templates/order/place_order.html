@@ -1,0 +1,22 @@
+<p> Place order </p>
+
+<main>
+  <section class="main__commodity">
+    {% if commodity.picture. %}
+      <img src= "{{ commodity.picture.url }}" alt='img'>
+    {% endif %}
+    {{ commodity.name }}
+    {{ commodity.price }}
+    {{ commodity.description }}
+  </section>
+  <form method="POST" action="{% url 'order:place_order' id %}">
+    {% csrf_token %}
+    {% for formitem in form %}
+      {% if formitem is not form.commodity %}
+        {{ formitem.label }}
+        {{ formitem }}
+      {% endif %}
+    {% endfor %}
+    <input type=submit value="PLACE ORDER">
+  </form>
+</main>

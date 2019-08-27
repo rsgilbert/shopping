@@ -1,11 +1,34 @@
-<h1> Commodities </h1>
+{% extends 'commodity/base.html' %}
 
-{% for item in items %}
-    <p>{{ item.id }}</p>
-    <p>{{ item.name }} </p>
-    <p>{{ item.price }}</p>
-    {% if item.picture %}
-        <img src="{{ item.picture.url }}" alt="img">
-     {% endif %}   
+{% block content %}
+  <h1> Commodities </h1>
 
-{% endfor %}
+  <main>
+    {% for item in items %}
+      <div class="main__item">
+        <div class="item__picture">
+          {% if item.picture %}
+            <img src="{{ item.picture.url }}" alt="img" class="item__picture--img">
+          {% endif %}
+        </div>
+        <div class="item__title">
+          <p>{{ item.name }} </p>
+        </div>
+
+        <div class="item__description">
+          <p> {{ item.description }} </p>
+        </div>
+
+        <div class="item__price">
+          <p> {{ item.price }} </p>
+        </div>
+
+        <div class="item__placeorder">
+          <p><a href="{% url 'order:place_order' item.id %}"> PLACE ORDER </a></p>
+        </div>
+      </div>
+    {% endfor %}
+  </main>
+
+
+{% endblock %}

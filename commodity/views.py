@@ -12,9 +12,3 @@ def commodities(request):
 
 
 
-def commodity(request, id):
-    if request.method == 'GET':
-        item = get_object_or_404(Commodity, pk=id)
-        return render(request, 'commodity/commodity.html', {'item': item, 'id': id})
-    
-

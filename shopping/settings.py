@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'base.apps.BaseConfig',
     'order.apps.OrderConfig',
     'commodity.apps.CommodityConfig',
     'account.apps.AccountConfig',
@@ -150,7 +151,7 @@ DATABASES['default'].update(db_from_env)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
+
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
@@ -159,21 +160,27 @@ STATIC_URL = '/static/'
 
 
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
 
 
 # AZURE
 
 
-DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
-STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
 
 
-STATIC_LOCATION = "static"
-MEDIA_LOCATION = "media"
 
-AZURE_ACCOUNT_NAME = "wanaishoppingsite"
-AZURE_CUSTOM_DOMAIN = '{}.blob.core.windows.net'.format(AZURE_ACCOUNT_NAME)
-STATIC_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, STATIC_LOCATION)
-MEDIA_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, MEDIA_LOCATION)
+if DEBUG == True:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+    STATIC_URL = '/static/'
+
+
+
+elif DEBUG == False:
+    MEDIA_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, MEDIA_LOCATION)
+    DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
+    STATIC_LOCATION = "static"
+    MEDIA_LOCATION = "media"
+    AZURE_ACCOUNT_NAME = "wanaishoppingsite"
+    AZURE_CUSTOM_DOMAIN = '{}.blob.core.windows.net'.format(AZURE_ACCOUNT_NAME)
+    STATIC_URL = 'https://{0}/{1}/'.format(AZURE_CUSTOM_DOMAIN, STATIC_LOCATION)
+    STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'

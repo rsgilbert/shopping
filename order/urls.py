@@ -5,5 +5,5 @@ from . import views
 app_name = 'order'
 
 urlpatterns = [
-    path('', views.place_order, name="place_order"),
+    path('<int:id>', views.place_order, name="place_order"),
 ]
