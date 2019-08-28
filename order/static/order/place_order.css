@@ -24,6 +24,14 @@ form div input {
     width: 85%;
 }
 
+select {
+    height: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background-color: rgba(225, 124, 15, 1); 
+}
+
 .submit {
     /* background-color: rgba(225, 124, 15, 1); */
     background-color: teal;
@@ -34,5 +42,6 @@ form div input {
     margin: 2rem;
     color: white;
     border: none;
-    /* box-shadow: 2px 0 2px 1px rgba(0, 0, 0, 0.95); */
+    font-family: 'Lekton', sans-serif;
+    font-size: 1.4rem;
 }
