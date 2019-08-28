@@ -6,10 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lekton:700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'index.css' %}">
-    <link rel="stylesheet" href="{% static 'main.css' %}">
     <link rel="stylesheet" href="{% static 'header.css' %}">
     <link rel="stylesheet" href="{% static 'footer.css' %}">
-    <link href="{% static 'place_order.css' %}" rel="stylesheet"> 
+
+    {% block headcontent %}
+
+    {% endblock %}
   </head>
 
   <body>
@@ -33,7 +35,7 @@
     </main>
 
     <footer>
-      <p class=" footer__p"><i class="material-icons">copyright</i> &nbsp<strong>WANAI&nbsp </strong> online shop</p>
+      <p class="footer__p"><i class="material-icons pantone">copyright</i> &nbsp<strong>WANAI&nbsp </strong> online shop</p>
     </footer>
   </body>
 

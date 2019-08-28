@@ -1,14 +1,21 @@
 footer {
     min-height: 15%;
-    background: rgba(225, 124, 15, 1);
+    /* background: rgba(225, 124, 15, 1); */
+    background-color: black;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: flex-end;
     padding: 0 1rem;
+    color: white;
 }
 
 .footer__p {
   display: flex;
   align-items: center;
+  color: rgba(225, 124, 15, 1);;
+}
+
+strong {
+  color: rgba(225, 124, 15, 1);;
 }

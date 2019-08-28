@@ -1,0 +1,38 @@
+
+.main__commodity {
+    display: flex;
+    flex-direction: column;
+}
+
+.item__description p {
+    color:#60584f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+form  div {
+    /* width: 100%; */
+    font-size: 2rem;
+    text-align: center;
+}
+form div input {
+    height: 2rem;
+    width: 85%;
+}
+
+.submit {
+    /* background-color: rgba(225, 124, 15, 1); */
+    background-color: teal;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    color: white;
+    border: none;
+    /* box-shadow: 2px 0 2px 1px rgba(0, 0, 0, 0.95); */
+}
