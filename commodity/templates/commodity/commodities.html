@@ -1,5 +1,7 @@
 {% extends 'commodity/base.html' %}
 
+{% load humanize%}
+
 {% block maincontent %}
 
 <section class="main__title">
@@ -19,7 +21,7 @@
 			<h3>{{ item.name }}</h3>
 			</div>
 			<div class="item__price">
-			<h3>{{ item.price }}</h3>
+			<h3>{{ item.price | intcomma }}</h3>
 			</div>
 		</div>
 		<div class="item__placeorder">
