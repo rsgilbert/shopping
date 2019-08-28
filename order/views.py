@@ -9,7 +9,7 @@ def place_order(request, id):
     commodity = get_object_or_404(Commodity, pk=id)
     if request.method == "GET":
         form = OrderForm()
-        return render(request, 'order/place_order.html', {'form': form, "id": id})
+        return render(request, 'order/place_order.html', {'form': form, "id": id, 'commodity': commodity})
 
     if request.method == "POST":
         form = OrderForm(request.POST)

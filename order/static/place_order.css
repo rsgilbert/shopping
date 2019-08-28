@@ -1,0 +1,9 @@
+
+.main__commodity {
+    display: flex;
+    flex-direction: column;
+}
+
+.item__description p {
+    color:#60584f;
+}

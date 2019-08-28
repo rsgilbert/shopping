@@ -1,14 +1,38 @@
-<p> Place order </p>
+{% extends 'commodity/base.html'%}
 
-<main>
-  <section class="main__commodity">
-    {% if commodity.picture. %}
-      <img src= "{{ commodity.picture.url }}" alt='img'>
-    {% endif %}
-    {{ commodity.name }}
-    {{ commodity.price }}
-    {{ commodity.description }}
-  </section>
+{% load humanize %}
+{% load static %}
+
+
+{% block maincontent %}
+
+<section class="main__title">
+  <h1 class="main__title--h4"> Place Order </h1>
+</section>
+
+
+<section class="main__commodity">
+		<div class="item__image">
+			{% if commodity.picture %}
+			<img src="{{ commodity.picture.url }}" alt="img" class="item__picture--img">
+			{% endif %}
+		</div>
+		<div class="item__details">
+			<div class="item__name">
+			<h3>{{ commodity.name }}</h3>
+			</div>
+			<div class="item__price">
+			<h3>{{ commodity.price | intcomma }}</h3>
+			</div>
+		</div>
+		<div class="item__description">
+			<p>{{ commodity.description }}</p>
+		</div>
+	</div>
+</section>
+
+<section class="main__placeorder">
+
   <form method="POST" action="{% url 'order:place_order' id %}">
     {% csrf_token %}
     {% for formitem in form %}
@@ -17,4 +41,8 @@
     {% endfor %}
     <input type=submit value="PLACE ORDER">
   </form>
-</main>
+</section>
+
+{% endblock %}
+
+
