@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  min-height: 10%;
+  background: aliceblue;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__img {
+  color: rgba(225, 124, 15, 1);
+  font-weight: bold;
+  margin: 0 2rem;
+}
+
+.header__links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.header__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 2rem;
+
+}

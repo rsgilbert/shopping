@@ -1,14 +1,39 @@
 <html>
+
   <head>
     {% load static %}
-    <link rel=stylesheet href={% static 'base.css' %}
-    {% block headcontent %}
-      <title>wanai</title>
-
-    {% endblock %}
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lekton:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
   </head>
-  {% block content %}
 
-  {% endblock %}
+  <body>
+    <header>
+      <div class="header__img">WANAI</div>
+      <ul class="header__links">
+        <li class="header__link color-black">
+          <i class="material-icons pantone">phone</i>+256 703 981 681
+        </li>
+        <li class="header__link color-black">
+          <i class="material-icons pantone">&nbspmail</i>wanai@gmail.com
+        </li>
+      </ul>
+    </header>
 
-<html>
+
+    <main>
+      {% block maincontent %}
+
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p class=" footer__p"><i class="material-icons">copyright</i> &nbsp<strong>WANAI&nbsp </strong> online shop</p>
+    </footer>
+  </body>
+
+</html>

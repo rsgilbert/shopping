@@ -1,0 +1,22 @@
+/* Included google fonts
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lekton', sans-serif;
+ */
+* {
+  border-spacing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.material-icons.pantone {
+  color: rgba(225, 124, 15, 1);
+}
+
+.color-black {
+  color: black;
+}
+html, body {
+  height: 100%;
+}
