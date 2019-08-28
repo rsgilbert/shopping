@@ -36,7 +36,9 @@
   <h1 class="main__title--h4"> Required Fields * </h1>
 </section>
 
-
+	{% if form.errors %} 
+		{{ form.errors }}
+	{% endif %}
 <section class="main__placeorder">
 
   <form method="POST" action="{% url 'order:place_order' id %}">
@@ -45,19 +47,19 @@
 	<label for="fullname">Fullname *</label>
 	</div>
 	<div>
-		<input type="text" id="fullname" autofocus required>
+		<input type="text" id="fullname" name="fullname" autofocus required>
 	</div>
 	<div>
 		<label for="telephone">Telephone *</label>
 	</div>
 	<div>
-		<input type="text" id="telephone" required>
+		<input type="text" id="telephone" name="telephone" required>
 	</div>
 	<div>
 		<label for="hall">Hall *</label>
 	</div>
 	<div>
-		<select id="hall">
+		<select id="hall" name="hall">
 			<option value="hall1" >hall one</option>
 			<option value="new_hall">hall two</option>
 			<option value="anotherhall">hall three </option>
@@ -67,7 +69,7 @@
 		<label for="room_number">Room Number</label>
 	</div>
 	<div>
-		<input type="text" id="room_number">
+		<input type="text" id="room_number" name="room_number">
 	</div>
 	<div>
     	<input class="submit" type=submit value="Place Order">

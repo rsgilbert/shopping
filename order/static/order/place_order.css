@@ -14,14 +14,15 @@ form {
     /* align-items: center; */
 }
 
-form  div {
-    /* width: 100%; */
+form div {
     font-size: 2rem;
     text-align: center;
 }
 form div input {
     height: 2rem;
     width: 85%;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 select {
@@ -33,7 +34,6 @@ select {
 }
 
 .submit {
-    /* background-color: rgba(225, 124, 15, 1); */
     background-color: teal;
     height: 5rem;
     display: flex;
@@ -44,4 +44,5 @@ select {
     border: none;
     font-family: 'Lekton', sans-serif;
     font-size: 1.4rem;
+    width: 90%;
 }
