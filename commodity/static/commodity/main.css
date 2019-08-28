@@ -25,6 +25,7 @@ main {
 
 .main__title {
   background-color: rgba(225, 124, 15, 1);
+  /* background-color: teal; */
   height: 5rem;
   display: flex;
   align-items: center;
@@ -67,14 +68,20 @@ main {
 .item__price {
   text-align: center;
 }
+
 .item__placeorder {
-  grid-area: placeorder;
   background-color: rgba(225, 124, 15, 1);
-  text-align: center;
+  /* background-color: teal; */
+  height: 25%;
+
 
 }
 
 .item__placeorder--link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   font-family: 'Lekton', sans-serif;
   cursor: pointer;

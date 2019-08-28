@@ -26,7 +26,7 @@ main {
 
 .main__title {
   background-color: rgba(225, 124, 15, 1);
-  height: 5rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
