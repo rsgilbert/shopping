@@ -5,13 +5,12 @@ from .models import Order, OrderHistory
 
 # Create your views here.
 
+
 def place_order(request, id):
     commodity = get_object_or_404(Commodity, pk=id)
-    if request.method == "GET":
-        form = OrderForm()
-        return render(request, 'order/place_order.html', {'form': form.as_table(), "id": id, 'commodity': commodity})
-
+    print(request.method)
     if request.method == "POST":
+        print("posting")
         form = OrderForm(request.POST)
         if form.is_valid():
             Order.objects.create(
@@ -20,14 +19,20 @@ def place_order(request, id):
                 hall=form.cleaned_data['hall'],
                 room_number=form.cleaned_data['room_number'],
                 commodity=commodity
-                )
+            )
             OrderHistory.objects.create(
                 fullname=form.cleaned_data['fullname'],
                 telephone=form.cleaned_data['telephone'],
                 hall=form.cleaned_data['hall'],
                 room_number=form.cleaned_data['room_number'],
                 commodity=commodity
-                )
-            return redirect('commodity:commodities')
+            )
+            print("Valid")
+            return render(request, 'order/place_order.html', {'form': form, "id": id, 'commodity': commodity, 'submitted': True})
         else:
-            print("invalid", form.errors)
+            return render(request, 'order/place_order.html', {'form': form, "id": id, 'commodity': commodity })
+
+    if request.method == "GET":
+        form = OrderForm()
+        print("getting")
+        return render(request, 'order/place_order.html', {'form': form, "id": id, 'commodity': commodity, 'submitted': False})

@@ -4,82 +4,83 @@
 {% load static %}
 
 {% block headcontent %}
-    <link href="{% static 'order/main.css' %}" rel="stylesheet"> 
-    <link href="{% static 'order/place_order.css' %}" rel="stylesheet"> 
+<link href="{% static 'order/main.css' %}" rel="stylesheet">
+<link href="{% static 'order/place_order.css' %}" rel="stylesheet">
 {% endblock %}
 
-
 {% block maincontent %}
-<section class="main__modal">
-	<div class="backdrop"></div>
-	<div class="modal">
-		<p class="modal__message">
-		Thank you for buying from us. 
-		We will process your order soon
-		</p>
-		<h1 class="modal--h1"><a class="modal__link" href="{% url 'commodity:commodities' %}">OK </a></h1>
-	</div>
-</section>
+  {% if submitted %}
+  <section class="main__modal">
+
+    <div class="backdrop"></div>
+    <div class="modal">
+      <p class="modal__message">
+        Thank you for buying from us.
+        We will process your order soon
+      </p>
+      <h1 class="modal--h1"><a class="modal__link" href="{% url 'commodity:commodities' %}">OK </a></h1>
+    </div>
+  </section>
+  {% endif %}
 
 <section class="main__commodity">
-	<div class="item__image">
-		{% if commodity.picture %}
-		<img src="{{ commodity.picture.url }}" alt="img" class="item__picture--img">
-		{% endif %}
-	</div>
-	<div class="item__details">
-		<div class="item__name">
-			<h3>{{ commodity.name }}</h3>
-		</div>
-		<div class="item__price">
-			<h3>{{ commodity.price | intcomma }}</h3>
-		</div>
-	</div>
-	<div class="item__description">
-		<p>{{ commodity.description }}</p>
-	</div>
+  <div class="item__image">
+    {% if commodity.picture %}
+    <img src="{{ commodity.picture.url }}" alt="img" class="item__picture--img">
+    {% endif %}
+  </div>
+  <div class="item__details">
+    <div class="item__name">
+      <h3>{{ commodity.name }}</h3>
+    </div>
+    <div class="item__price">
+      <h3>{{ commodity.price | intcomma }}</h3>
+    </div>
+  </div>
+  <div class="item__description">
+    <p>{{ commodity.description }}</p>
+  </div>
 </section>
 
 
 <section class="main__title">
   <h1 class="main__title--h4"> Required Fields * </h1>
 </section>
-	{% if form.errors %} 
-		{{ form.errors }}
-	{% endif %}
+{% if form.errors %}
+{{ form.errors }}
+{% endif %}
 <section class="main__placeorder">
-
   <form method="POST" action="{% url 'order:place_order' id %}">
     {% csrf_token %}
-	<div>
-	<label for="fullname">Fullname *</label>
-	</div>
-	<div>
-		<input type="text" id="fullname" name="fullname" autofocus required>
-	</div>
-	<div>
-		<label for="telephone">Telephone *</label>
-	</div>
-	<div>
-		<input type="text" id="telephone" name="telephone" required>
-	</div>
-	<div>
-		<label for="hall">Hall *</label>
-	</div>
-	<div>
-		<select id="hall" name="hall">
-			<option value="hall1" >hall one</option>
-			<option value="new_hall">hall two</option>
-			<option value="anotherhall">hall three </option>
-		</select>
-	</div>
-	<div>
-		<label for="room_number">Room Number</label>
-	</div>
-	<div>
-		<input type="text" id="room_number" name="room_number">
-	</div>
-    <input class="submit_placeorder" type=submit value="Place Order">
+    <div>
+      <label for="fullname">Fullname *</label>
+    </div>
+    <div>
+      <input type="text" id="fullname" name="fullname" autofocus required>
+    </div>
+    <div>
+      <label for="telephone">Telephone *</label>
+    </div>
+    <div>
+      <input type="text" id="telephone" name="telephone" required>
+    </div>
+    <div>
+      <label for="hall">Hall / Hostel *</label>
+    </div>
+    <div>
+      <select id="hall" name="hall">
+        <option value="hall1">hall one</option>
+        <option value="new_hall">hall two</option>
+        <option value="anotherhall">hall three </option>
+      </select>
+    </div>
+    <div>
+      <label for="room_number">Room Number</label>
+    </div>
+    <div>
+      <input type="text" id="room_number" name="room_number">
+    </div>
+    <input class="submit_placeorder" type="submit" value="Place Order">
 
   </form>
 </section>
@@ -87,5 +88,3 @@
 
 <script src="{% static 'order/place_order.js' %}"></script>
 {% endblock %}
-
-

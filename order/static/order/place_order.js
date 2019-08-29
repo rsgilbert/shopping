@@ -1,9 +1,17 @@
-let BACKDROP = document.querySelector('.backdrop')
-let MODAL = document.querySelector('.modal')
-let PLACEORDER = document.querySelector('.submit_placeorder')
-let FORM = document.qu
+// 
+// let submitted = "{{ submitted }}"
+// console.log(submitted)
+// if(submitted) {
+//   let MAIN_MODAL = document.querySelector('.main__modal')
+//   MAIN_MODAL.style.display = 'block'
+// }
 
-PLACEORDER.addEventListener('click', () => {
-    BACKDROP.style.display = 'block'
-    MODAL.style.display = 'block'
-})
+
+
+// PLACEORDER.addEventListener('click', () => {
+//   console.dir(PLACEORDER.onsubmit)
+// })
+// PLACEORDER.classList.onsubmit(() => {
+//
+//   console.log("Done")
+// })
