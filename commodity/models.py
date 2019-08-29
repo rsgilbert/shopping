@@ -11,4 +11,5 @@ class Commodity(models.Model):
     description = models.CharField(max_length=1000, blank=True)
     in_stock = models.IntegerField(blank=True)
 
-
+    def __str__(self):
+        return str(self.name)
