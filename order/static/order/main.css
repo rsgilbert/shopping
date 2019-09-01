@@ -9,7 +9,7 @@ main {
 
 .main__title--h4 {
   font-family: 'Lekton', sans-serif;
-  color: white;
+  color: darkgreen;
 }
 .main__items {
   display: flex;
@@ -24,7 +24,7 @@ main {
 
 
 .main__title {
-  background-color: rgba(225, 124, 15, 1);
+  background-color: lightgreen;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@ main {
 }
 .item__placeorder {
   grid-area: placeorder;
-  background-color: rgba(225, 124, 15, 1);
+  background-color: lightgreen;
   text-align: center;
 }
 

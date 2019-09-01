@@ -9,6 +9,11 @@ def commodities(request):
         items = Commodity.objects.all()
         return render(request, 'commodity/commodities.html', {'items': items})
 
-
+    if request.method == "POST":
+            print("Method was post", request.POST)
+            searchword = request.POST['searchitem']
+            print("Search word is ", searchword)    
+            items = Commodity.objects.filter(name__icontains=searchword)
+            return render(request, 'commodity/commodities.html', {'items': items})
 
 

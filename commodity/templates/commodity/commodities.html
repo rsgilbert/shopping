@@ -5,11 +5,19 @@
 {% load static %}
 
 {% block headcontent %}
-
     <link rel="stylesheet" href="{% static 'commodity/main.css' %}">
 {% endblock %}
 
 {% block maincontent %}
+
+<section class="main__search">
+	<form method="POST" action="{% url 'commodity:commodities' %}">
+		{% csrf_token %}
+		<input id="searchitem" class="search__box" place_order="Search" autofocus>
+		<input type="submit" class="search__submit" value="SEARCH">
+	</form>
+</section>
+
 
 <section class="main__title">
   <h1 class="main__title--h4"> Featured Products </h1>

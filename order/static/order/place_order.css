@@ -25,16 +25,9 @@ form div input {
 
 }
 
-select {
-    height: 2rem;
-    color: white;
-    font-weight: bold;
-    font-size: 1.3rem;
-    background-color: rgba(225, 124, 15, 1);
-}
 
 .submit_placeorder {
-    background-color: teal;
+    background-color: darkgreen;
     height: 4rem;
     color: white;
     margin: 2rem 0;

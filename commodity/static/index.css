@@ -10,7 +10,7 @@
 }
 
 .material-icons.pantone {
-  color: rgba(225, 124, 15, 1);
+  color: lightgreen;
 }
 
 .material-icons {
@@ -22,4 +22,6 @@
 }
 html, body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }

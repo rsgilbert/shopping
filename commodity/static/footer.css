@@ -13,9 +13,9 @@ footer {
 .footer__p {
   display: flex;
   align-items: center;
-  color: rgba(225, 124, 15, 1);;
+  color: lightgreen;
 }
 
 strong {
-  color: rgba(225, 124, 15, 1);;
+  color: lightgreen;
 }

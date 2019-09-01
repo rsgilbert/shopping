@@ -8,9 +8,9 @@ header {
 }
 
 .header__img {
-  color: rgba(225, 124, 15, 1);
+  color: darkgreen;
   font-weight: bold;
-  margin: 0 2rem;
+
 }
 
 .header__links {
@@ -24,6 +24,6 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 2rem;
+  margin: 0 1rem;
 
 }
