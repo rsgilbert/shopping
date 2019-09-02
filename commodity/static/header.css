@@ -27,3 +27,15 @@ header {
   margin: 0 1rem;
 
 }
+
+.header__brand--link {
+  height: 100%;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header__brand--link:hover {
+  border-bottom: 2px solid darkgreen;
+}
+

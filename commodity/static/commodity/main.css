@@ -117,3 +117,7 @@ main {
   cursor: pointer;
   color: lightgreen;
 }
+
+.item__placeorder:hover {
+  background-color: white;
+}
