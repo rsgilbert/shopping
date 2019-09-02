@@ -70,13 +70,13 @@ main {
   flex-direction: column;
   border: 0.01px gray solid;
   border-radius: 4px;
-  margin: 0.5rem 0.8rem 0.5rem 0.25rem;
-  padding: 0.2rem;
+  margin: 0;
+  /* padding: 0.2rem; */
   height: 15rem;
 
 }
 .item__image {
-  height: 10rem;
+  height: 11rem;
   width: 100%;
   display: flex;
   background: white;
@@ -86,8 +86,9 @@ main {
 }
 
 .item__image img {
-  height: 8rem;
-  width: 8rem;
+  height: 100%;
+  width: 10rem;
+  
 }
 
 .item__details {
@@ -115,9 +116,13 @@ main {
   text-decoration: none;
   font-family: 'Lekton', sans-serif;
   cursor: pointer;
-  color: lightgreen;
+  color: black;
 }
 
 .item__placeorder:hover {
-  background-color: white;
+  background-color: rgb(4, 66, 4);
+}
+
+.item__placeorder--link:hover {
+  color:white;
 }
