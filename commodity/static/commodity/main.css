@@ -9,11 +9,19 @@ main {
 .main__search {
   display: flex;
   flex-direction: row;
-  justify-content: stretch;
+  justify-content: center;
   align-items: center;
   margin: 0.5rem;
   flex-wrap: nowrap;
-  
+  width: 90%;
+
+}
+
+.search__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .search__box {
   flex-grow: 2;
@@ -22,19 +30,28 @@ main {
   background: rgb(195, 219, 195);
   font-size: 1.2rem;
   flex-shrink: 1;
-  max-width: 80%;
+  max-width: 85%;
+  padding: 0 1rem;
 }
-.search__submit {
+.submit__button {
   background: lightgreen;
-  border-radius: 1px;
+  border-radius: 2px;
   display: inline-block;
   height: 2rem;
   padding: 4px;
-  border: darkgreen 2px solid;
+  border: darkgreen 1px solid;
   color: darkgreen;
   cursor: pointer;
   flex-shrink: 0;
   flex-grow: 0;
+}
+
+.searchicon {
+  color: darkgreen;
+}
+
+.materialicons .searchicon {
+  font-weight: bold;
 }
 
 .main__items {

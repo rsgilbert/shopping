@@ -11,12 +11,10 @@
 {% block maincontent %}
 
 <section class="main__search">
-	<form method="POST" action="{% url 'commodity:commodities' %}">
+	<form method="POST"  class="search__form" action="{% url 'commodity:commodities' %}">
 		{% csrf_token %}
-		{% comment %} {{ form.text }} {% endcomment %}
-		{% comment %} <input type="text" class="search__box" name="text" id="id_text" maxlength="20" required=""> {% endcomment %}
 		<input name="text" class="search__box" type="text" place_order="Search" max_length="20" autofocus>
-		<input type="submit" class="search__submit" value="SEARCH">
+		<button class="submit__button" name="submit" type="submit"><i class="material-icons searchicon">search</i></button> 
 	</form>
 </section>
 
